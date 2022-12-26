@@ -11,4 +11,18 @@ public class WhenCreatingObjects {
         Assert.assertEquals(fido.getFavoriteToy(), "Bone");
         Assert.assertEquals(fido.getAge(), 5);
     }
+
+    @Test
+    public void dog_makes_noise() {
+        Dog bruno = new Dog("Bruno", "Bone", 6);
+        Assert.assertEquals(bruno.makeNoise(), "Woof");
+    }
+
+    @Test
+    public void dog_feeds() {
+        Dog jack = new Dog("Jack", "Ball", 2);
+        Assert.assertFalse(jack.getIsFed());
+        jack.feed();
+        Assert.assertTrue(jack.getIsFed());
+    }
 }
